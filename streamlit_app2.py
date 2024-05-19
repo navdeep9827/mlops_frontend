@@ -31,7 +31,7 @@ def send_frame_to_flask(frame):
     _, buffer = cv2.imencode('.jpg', frame)
     frame_bytes = base64.b64encode(buffer).decode('utf-8')
     try:
-        response = requests.post('http://localhost:5000/predict', json={'data': frame_bytes})
+        response = requests.post('https://mlops-project-r08k.onrender.com/predict', json={'data': frame_bytes})
         response.raise_for_status()
         return response.json()['prediction']
     except requests.exceptions.RequestException as e:
