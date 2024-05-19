@@ -19,7 +19,7 @@ def start_flask():
 flask_process = start_flask()
 
 # Waiting for the Flask server to start
-time.sleep(15)
+time.sleep(3)
 
 st.title("Indian Sign Language Recognition")
 
