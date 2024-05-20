@@ -38,7 +38,7 @@ def send_image_to_flask(image):
 
     # Send image to Flask for prediction
     try:
-        response = requests.post('http://localhost:5000/predict', json={'data': image_bytes})
+        response = requests.post('https://mlops-project-r08k.onrender.com/predict', json={'data': image_bytes})
         response.raise_for_status()
         return response.json()['prediction']
     except requests.exceptions.RequestException as e:
